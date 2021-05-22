@@ -17,12 +17,13 @@
   height: 50vh;
   width: 25vw;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: rgba(237, 230, 242, 0.75);
   border-radius: 5px;
   transform: rotate3d(0);
-  transition: all 0.7s ease;
+  transition: all 0.1s ease;
   cursor: pointer;
   letter-spacing: 3px;
   text-align: center;
@@ -31,6 +32,7 @@
 .text {
   text-align: center;
   width: 100%;
+  margin: 0;
 }
 
 .flip {
@@ -41,4 +43,41 @@
   background-color: rgba(7, 7, 7, 0.75);
   letter-spacing: normal;
   border-radius: 50px;
+}
+
+.score-boxes {
+  margin: 0;
+  display: flex;
+  justify-content: space-around;
+  width: 90%;
+  padding-top: 48px;
+  font-size: 16px;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.score-box {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hide-scores {
+  display: none;
+}
+
+.score-box-element {
+  margin: 0;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 4px;
+  font-weight: bolder;
+}
+
+.score-box-score {
+  margin: 0;
+  width: 100%;
+  text-align: center;
+  font-weight: lighter;
 }
