@@ -1,6 +1,7 @@
 const events = [
   {
     name: "Storm",
+    description: "A big storm roles in, creatures run and hide",
     fire: 1,
     earth: 4,
     wind: 7,
@@ -8,6 +9,7 @@ const events = [
   },
   {
     name: "Earthquake",
+    description: "The ground shakes, chasms open and mountains fall",
     fire: 7,
     earth: 9,
     wind: 3,
@@ -15,6 +17,7 @@ const events = [
   },
   {
     name: "Tornado",
+    description: "Lethal wind tunnels turn ground into air",
     fire: 1,
     earth: 7,
     wind: 2,
@@ -22,6 +25,7 @@ const events = [
   },
   {
     name: "Wildfire",
+    description: "The whole world is set ablaze, nothing escapes",
     fire: 7,
     earth: 3,
     wind: 9,
@@ -29,6 +33,7 @@ const events = [
   },
   {
     name: "Flood",
+    description: "The ocean envelops the earth turning sky to abyss",
     fire: 5,
     earth: 2,
     wind: 9,
@@ -36,6 +41,7 @@ const events = [
   },
   {
     name: "Plague",
+    description: "Disease is everything, everything is death",
     fire: 6,
     earth: 4,
     wind: 4,
@@ -43,6 +49,7 @@ const events = [
   },
   {
     name: "Meteor",
+    description: "The sky is falling in planets topple mountains",
     fire: 2,
     earth: 8,
     wind: 2,
@@ -50,6 +57,8 @@ const events = [
   },
   {
     name: "Solar Flare",
+    description:
+      "Solar rays whip across space tearing at the fabric of the atmosphere",
     fire: +15,
     earth: 3,
     wind: 9,
@@ -57,6 +66,7 @@ const events = [
   },
   {
     name: "Drought",
+    description: "the rains recede.. forever",
     fire: 1,
     earth: +3,
     wind: +9,
@@ -64,6 +74,7 @@ const events = [
   },
   {
     name: "Heat Wave",
+    description: "Oh my gosh wow like so hot",
     fire: 1,
     earth: +3,
     wind: -9,
@@ -71,6 +82,7 @@ const events = [
   },
   {
     name: "Deep Freeze",
+    description: "Oh my god wow like so cold",
     fire: -1,
     earth: -3,
     wind: +9,
@@ -80,24 +92,31 @@ const events = [
 
 const card = document.querySelector(".content");
 const text = card.querySelector(".text");
+const description = card.querySelector(".description");
 const fire = document.querySelector(".fire");
 const earth = document.querySelector(".earth");
 const wind = document.querySelector(".wind");
 const water = document.querySelector(".water");
 const scoreBoxes = card.querySelector(".score-boxes");
 
+function randomNumber(multiplier) {
+  return Math.floor(Math.random() * multiplier);
+}
+
 function flip() {
-  let index = Math.floor(Math.random() * 11);
+  let index = randomNumber(11);
   let event = index;
   console.log(`${event} is ${events[event].name}`);
   card.classList.toggle("flip");
-  scoreBoxes.classList.toggle("hide-scores");
+  description.classList.toggle("hidden");
+  scoreBoxes.classList.toggle("hidden");
   if (card.classList.contains("flip")) {
     text.textContent = `${events[event].name}`;
-    fire.textContent = `${events[event].fire}`;
-    earth.textContent = `${events[event].earth}`;
-    wind.textContent = `${events[event].wind}`;
-    water.textContent = `${events[event].water}`;
+    description.textContent = `${events[event].description}`;
+    fire.textContent = `${randomNumber(50)}`;
+    earth.textContent = `${randomNumber(50)}`;
+    wind.textContent = `${randomNumber(50)}`;
+    water.textContent = `${randomNumber(50)}`;
   } else {
     text.textContent = "CHANCE";
   }

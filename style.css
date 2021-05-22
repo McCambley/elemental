@@ -15,7 +15,7 @@
 
 .content {
   height: 50vh;
-  width: 25vw;
+  width: 75vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -35,6 +35,15 @@
   margin: 0;
 }
 
+.description {
+  margin: 0;
+  /* border: 1px solid red; */
+  padding: 16px 16px 24px;
+  font-size: 16px;
+  opacity: 0.7;
+  text-align: center;
+}
+
 .flip {
   transform: rotate3d(1, 1, 1, 720deg);
   font-family: "Papyrus";
@@ -50,7 +59,6 @@
   display: flex;
   justify-content: space-around;
   width: 90%;
-  padding-top: 48px;
   font-size: 16px;
   font-family: "Courier New", Courier, monospace;
 }
@@ -63,7 +71,7 @@
   align-items: center;
 }
 
-.hide-scores {
+.hidden {
   display: none;
 }
 
